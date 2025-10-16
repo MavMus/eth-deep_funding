@@ -2,6 +2,10 @@
 Username on Pond: MavMus <br />
 email id: kumarankaj110@gmail.com
 
+As others have already pointed the dataset was quite partial due to which I was limited to only the blend of feature engineering and  combining of ML based algorithms, I changed my approach when the reasoning of each jurors were introduced in the training dataset (15th September update), Shifting my approach to more of letting a LLM trying to imitate a juror, based on the reasonings of all other jurors. <br />
+
+Taking inspiration from earlier competition based on similar theme:
+
 
 ```python
 contributor_names = enhanced_teams.assign(Names = enhanced_teams['recentContributors'].str.split(', ')).explode('Names')
