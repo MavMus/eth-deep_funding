@@ -19,3 +19,21 @@ repo_with_contributor
 
 
 ```
+
+```python
+# Compute high multiplier threshold (mean + 3*std)
+multipliers_arr = np.array([m if m is not None else 0 for m in multipliers])
+high_mult_threshold = multipliers_arr.mean() + 3 * multipliers_arr.std()
+
+
+# Separate high-multiplier and regular reasonings
+high_mult_reasonings = [
+    r for r, m in zip(reasonings, multipliers)
+    if isinstance(r, str) and r.strip() and m is not None and m > high_mult_threshold
+]
+regular_reasonings = [
+    r for r, m in zip(reasonings, multipliers)
+    if isinstance(r, str) and r.strip() and (m is None or m <= high_mult_threshold)
+]
+
+```
