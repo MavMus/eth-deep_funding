@@ -38,6 +38,10 @@ regular_reasonings = [
 
 ```
 
+Depending on whether a particular repository is an execution client, consensus client, light client, development framework, SDK, or package, I decided to support the model by fetching the data accordingly. 
+Now the judgements were done within those groups only, like within execution_client, consensus_client repos, I looked for which repo has a higher market share. For packages, which repos have the most downloads?
+
+
 ```python
 # --- DATA (Manually collected data, as writing a scraping script for this limited number was pointless) ---
 client_market_data = {
@@ -55,7 +59,7 @@ package_downloads = {
     "alloy-rs/alloy": 76000
 }
 ```
-As LLM's output was not explicitly a numeric response, I had to use a function for extracting its rating, which was from 1 to 100. Now, we normalised such that the final weight when summed across each repo was 1.
+As the LLM's output was not explicitly a numeric response, I had to use a function to extract its rating, which ranged from 1 to 100. Now, we normalised such that the final weight when summed across each repo was 1.
 
 Things which I would have loved to explore,
 # Explore different probabilistic models for comparison between a pair
