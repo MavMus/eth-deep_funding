@@ -2,8 +2,28 @@
 Username on Pond: MavMus
 email id: kumarankaj110@gmail.com
 
-'''
-python
-contributor_names = enhanced_teams.assign(Names = enhanced_teams['recentContributors'].str.split(', ')).explode('Names')
-contributor_names
-'''
+```python
+from intelligent_retriever import create_retriever, RetrievalConfig
+
+config = RetrievalConfig(
+    db_host="localhost",
+    db_name="vector_db",
+    db_user="postgres",
+    db_password="postgres123",
+    redis_url="redis://localhost:6379"
+)
+
+retriever = create_retriever(config=config)
+
+# Retrieve with user context
+result = retriever.retrieve("What is machine learning?", user_id="user123")
+
+print(f"Strategy: {result['strategy_used']}")
+print(f"Context Used: {result['context_used']}")
+print(f"Documents: {result['documents']}")
+```
+
+```python
+
+print(f"working")
+```
