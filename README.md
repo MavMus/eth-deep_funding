@@ -25,6 +25,6 @@ print(f"Documents: {result['documents']}")
 ```
 
 ```python
-
-print(f"working")
+contributor_names = enhanced_teams.assign(Names = enhanced_teams['recentContributors'].str.split(', ')).explode('Names')
+contributor_names
 ```
