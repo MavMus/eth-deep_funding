@@ -23,7 +23,7 @@ repo_with_contributor
 
 
 ```
-
+Creating a reasoning_summary based on the juror’s reasoning, which will be used to take a gauge of what’s going behind the minds of jurors. Apart from consolidating the reasoning of the jurors, I also decided to put an extra weight on those reasonings which had some really large multipliers, 
 ```python
 # Compute high multiplier threshold (mean + 3*std)
 multipliers_arr = np.array([m if m is not None else 0 for m in multipliers])
