@@ -142,6 +142,7 @@ package_downloads = {
     "alloy-rs/alloy": 76000
 }
 ```
+The prompts and code used are present in the repo as well, not including it here as it would make it unnecessarily long post. <br />
 As the LLM's output was not explicitly a numeric response, I had to use a function to extract its rating, which ranged from 1 to 100. Now, we normalised such that the final weight when summed across each repo was 1.
 
 Things which I would have loved to explore,
